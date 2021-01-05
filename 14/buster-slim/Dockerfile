@@ -30,7 +30,7 @@ RUN set -eux; \
 
 RUN set -eux; \
     \
-    mkdir /app \
+    mkdir /app; \
     \
     node --version
 

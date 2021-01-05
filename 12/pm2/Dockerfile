@@ -5,11 +5,11 @@
 #
 
 FROM chinayin/node:12
-ENV DEPLOY_IMAGE_VERSION="2021-01-05 16:04"
+ENV DEPLOY_IMAGE_VERSION="2021-01-05 21:19"
 
 RUN set -eux; \
     # Install pm2
-    npm install pm2 -g \
+    npm install pm2 -g; \
     \
     node --version
 
