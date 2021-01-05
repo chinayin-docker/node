@@ -11,7 +11,7 @@ RUN set -eux; \
     # Install pm2
     npm install pm2 -g; \
     \
-    node --version
+    pm2 -version
 
 EXPOSE 3000 43554
 

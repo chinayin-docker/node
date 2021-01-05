@@ -21,6 +21,7 @@ jobs:
           export TAG_VERSION=${{ matrix.version }}
           docker build . --file ${{ matrix.version }}/buster-slim/Dockerfile --tag chinayin/node:${TAG_VERSION}
           docker build . --file ${{ matrix.version }}/pm2/Dockerfile --tag chinayin/node:${TAG_VERSION}-pm2
+          docker build . --file ${{ matrix.version }}/nuxt/Dockerfile --tag chinayin/node:${TAG_VERSION}-nuxt
           docker image ls
 
       - name: Push image to Docker hub
@@ -32,4 +33,5 @@ jobs:
           echo ${{ secrets.DOCKER_HUB_PASSWORD }} | docker login -u ${{ secrets.DOCKER_HUB_USER }} --password-stdin
           docker push chinayin/node:${TAG_VERSION}
           docker push chinayin/node:${TAG_VERSION}-pm2
+          docker push chinayin/node:${TAG_VERSION}-nuxt
           docker logout
