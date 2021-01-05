@@ -13,7 +13,8 @@ ARG TIMEZONE=Asia/Shanghai
 RUN if [ $CHANGE_SOURCE = true ]; then \
     sed -i 's/deb.debian.org/mirrors.aliyun.com/' /etc/apt/sources.list && \
     sed -i 's/security.debian.org/mirrors.aliyun.com/' /etc/apt/sources.list && \
-    sed -i 's/security-cdn.debian.org/mirrors.aliyun.com/' /etc/apt/sources.list \
+    sed -i 's/security-cdn.debian.org/mirrors.aliyun.com/' /etc/apt/sources.list && \
+    npm config set registry https://registry.npm.taobao.org
 ;fi && cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime && echo "$TIMEZONE" > /etc/timezone;
 
 RUN set -eux; \
