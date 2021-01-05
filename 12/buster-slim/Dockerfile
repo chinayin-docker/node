@@ -14,7 +14,8 @@ RUN if [ $CHANGE_SOURCE = true ]; then \
     sed -i 's/deb.debian.org/mirrors.aliyun.com/' /etc/apt/sources.list && \
     sed -i 's/security.debian.org/mirrors.aliyun.com/' /etc/apt/sources.list && \
     sed -i 's/security-cdn.debian.org/mirrors.aliyun.com/' /etc/apt/sources.list && \
-    npm config set registry https://registry.npm.taobao.org
+    npm config set registry https://registry.npm.taobao.org && \
+    yarn config set registry https://registry.npm.taobao.org
 ;fi && cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime && echo "$TIMEZONE" > /etc/timezone;
 
 RUN set -eux; \
@@ -27,7 +28,6 @@ RUN set -eux; \
     apt-get clean; \
     rm -rf /var/lib/apt/lists/*; \
     printf "alias ls='ls --color=auto'\nalias ll='ls -l --color=auto'\nalias l='ls -lA --color=auto'" >> /root/.bashrc
-
 
 RUN set -eux; \
     \
