@@ -19,7 +19,7 @@ jobs:
           VERSION: ${{ matrix.version }}
         run: |
           export TAG_VERSION=${{ matrix.version }}
-          docker build . --file ${{ matrix.version }}/buster-slim/Dockerfile --tag chinayin/node:${TAG_VERSION}
+          docker build . --file ${{ matrix.version }}/slim/Dockerfile --tag chinayin/node:${TAG_VERSION}
           docker build . --file ${{ matrix.version }}/pm2/Dockerfile --tag chinayin/node:${TAG_VERSION}-pm2
           docker build . --file ${{ matrix.version }}/nuxt/Dockerfile --tag chinayin/node:${TAG_VERSION}-nuxt
           docker image ls
@@ -43,6 +43,9 @@ jobs:
         run: |
           export TAG_VERSION=${{ matrix.version }}
           echo ${{ secrets.ALIYUN_CR_PASSWORD }} | docker login --username ${{ secrets.ALIYUN_CR_USER }} registry.cn-beijing.aliyuncs.com --password-stdin
+          docker tag chinayin/node:${TAG_VERSION} registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}
+          docker tag chinayin/node:${TAG_VERSION}-pm2 registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}-pm2
+          docker tag chinayin/node:${TAG_VERSION}-nuxt registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}-nuxt
           docker push registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}
           docker push registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}-pm2
           docker push registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}-nuxt
