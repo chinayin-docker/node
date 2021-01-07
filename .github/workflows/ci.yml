@@ -36,17 +36,17 @@ jobs:
           docker push chinayin/node:${TAG_VERSION}-nuxt
           docker logout
 
-      - name: Push image to Aliyun Container Registry
-        if: success()
-        env:
-          VERSION: ${{ matrix.version }}
-        run: |
-          export TAG_VERSION=${{ matrix.version }}
-          echo ${{ secrets.ALIYUN_CR_PASSWORD }} | docker login --username ${{ secrets.ALIYUN_CR_USER }} registry.cn-beijing.aliyuncs.com --password-stdin
-          docker tag chinayin/node:${TAG_VERSION} registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}
-          docker tag chinayin/node:${TAG_VERSION}-pm2 registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}-pm2
-          docker tag chinayin/node:${TAG_VERSION}-nuxt registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}-nuxt
-          docker push registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}
-          docker push registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}-pm2
-          docker push registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}-nuxt
-          docker logout
+#      - name: Push image to Aliyun Container Registry
+#        if: success()
+#        env:
+#          VERSION: ${{ matrix.version }}
+#        run: |
+#          export TAG_VERSION=${{ matrix.version }}
+#          echo ${{ secrets.ALIYUN_CR_PASSWORD }} | docker login --username ${{ secrets.ALIYUN_CR_USER }} registry.cn-beijing.aliyuncs.com --password-stdin
+#          docker tag chinayin/node:${TAG_VERSION} registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}
+#          docker tag chinayin/node:${TAG_VERSION}-pm2 registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}-pm2
+#          docker tag chinayin/node:${TAG_VERSION}-nuxt registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}-nuxt
+#          docker push registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}
+#          docker push registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}-pm2
+#          docker push registry.cn-beijing.aliyuncs.com/chinayin/node:${TAG_VERSION}-nuxt
+#          docker logout
