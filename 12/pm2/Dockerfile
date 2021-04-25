@@ -8,6 +8,8 @@
 FROM chinayin/node:12-slim
 LABEL maintainer="chinayin <whereismoney@qq.com>"
 
+ENV NODE_VERSION 12.22.1
+
 RUN set -eux; \
     # Install pm2
     npm install pm2 -g; \
