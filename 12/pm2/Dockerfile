@@ -1,11 +1,12 @@
 #
+#
 #--------------------------------------------------------------------------
-# Image Setup
+# node 12-pm2
 #--------------------------------------------------------------------------
 #
 
-FROM chinayin/node:12
-ENV DEPLOY_IMAGE_VERSION="2021-01-05 21:19"
+FROM chinayin/node:12-slim
+LABEL maintainer="chinayin <whereismoney@qq.com>"
 
 RUN set -eux; \
     # Install pm2
