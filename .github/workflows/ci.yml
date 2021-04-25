@@ -68,7 +68,7 @@ jobs:
           push: true
           tags: |
             ${{ steps.vars.outputs.repository }}:${{ matrix.major }}-${{ matrix.os }}
-            ${{ steps.vars.outputs.repository }}:${{ steps.vars.outputs.version }}
+            ${{ steps.vars.outputs.repository }}:${{ steps.vars.outputs.version }}-${{ matrix.os }}
   build-pm2:
     runs-on: ubuntu-latest
     needs: build-slim
@@ -99,4 +99,4 @@ jobs:
           push: true
           tags: |
             ${{ steps.vars.outputs.repository }}:${{ matrix.major }}-${{ matrix.os }}
-            ${{ steps.vars.outputs.repository }}:${{ steps.vars.outputs.version }}
+            ${{ steps.vars.outputs.repository }}:${{ steps.vars.outputs.version }}-${{ matrix.os }}
