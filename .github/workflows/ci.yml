@@ -22,7 +22,7 @@ jobs:
         working-directory: ${{ matrix.major }}/${{ matrix.os }}
         run: |
           echo ::set-output name=repository::${GITHUB_ACTOR}/$(basename ${GITHUB_REPOSITORY})
-          echo ::set-output name=version::$(grep -oE 'NODE_VERSION[[:space:]]*[0-9].[0-9]+.[0-9]+' Dockerfile | grep -oE '[0-9].[0-9]+.[0-9]+')
+          echo ::set-output name=version::$(grep ' NODE_VERSION ' Dockerfile | awk '{print $3}')
           echo ::set-output name=workdir::${{ matrix.major }}/${{ matrix.os }}
       - name: Login to DockerHub
         uses: docker/login-action@v1
