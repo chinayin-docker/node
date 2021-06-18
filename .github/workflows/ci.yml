@@ -82,7 +82,7 @@ jobs:
     needs: build-slim
     strategy:
       matrix:
-        major: [ 12,14,16 ]
+        major: [ 12,14 ]
         os: [ pm2 ]
     steps:
       - name: Checkout code
