@@ -22,6 +22,4 @@ RUN set -eux; \
     \
     node --version
 
-USER node
-
 WORKDIR /app
