@@ -1,4 +1,4 @@
-# Node Base Image
+# nodejs
 
 [![Docker Image CI](https://github.com/chinayin-docker/node/actions/workflows/ci.yml/badge.svg?event=schedule)](https://github.com/chinayin-docker/php/actions/workflows/ci.yml)
 ![Docker Image Version (latest semver)](https://img.shields.io/docker/v/chinayin/node?sort=semver)
@@ -11,9 +11,11 @@ Node.js is a JavaScript-based platform for server-side and networking applicatio
 
 ![](https://img.shields.io/docker/v/chinayin/node/12)
 ![](https://img.shields.io/docker/v/chinayin/node/14)
+![](https://img.shields.io/docker/v/chinayin/node/16)
 
 ![](https://img.shields.io/docker/v/chinayin/node/12-slim)
 ![](https://img.shields.io/docker/v/chinayin/node/14-slim)
+![](https://img.shields.io/docker/v/chinayin/node/16-slim)
 
 ### Image Variants
 
@@ -25,7 +27,7 @@ Node.js is a JavaScript-based platform for server-side and networking applicatio
 You can use the image directly, e.g.
 
 ```
-docker run --rm -it chinayin/node:12
+docker run --rm -it chinayin/node:16
 ```
 
 The images are built daily and have the security release enabled, so will contain any security updates released more
@@ -34,5 +36,7 @@ than 24 hours ago.
 You can also use the images as a base for your own Dockerfile:
 
 ```
-FROM chinayin/node:12
+FROM chinayin/node:16
 ```
+
+[ref](https://github.com/nodejs/docker-node)
