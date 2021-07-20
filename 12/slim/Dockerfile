@@ -8,7 +8,7 @@
 FROM chinayin/node:12
 LABEL maintainer="chinayin <whereismoney@qq.com>"
 
-ENV NODE_VERSION 12.22.1
+ENV NODE_VERSION 12.22.3
 
 ARG CHANGE_SOURCE=true
 RUN if [ $CHANGE_SOURCE = true ]; then \

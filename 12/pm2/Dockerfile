@@ -8,7 +8,7 @@
 FROM chinayin/node:12-slim
 LABEL maintainer="chinayin <whereismoney@qq.com>"
 
-ENV NODE_VERSION 12.22.1
+ENV NODE_VERSION 12.22.3
 
 USER root
 RUN set -eux; \
