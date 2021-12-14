@@ -22,7 +22,7 @@ Node.js is a JavaScript-based platform for server-side and networking applicatio
 - `node:<version>`
 - `node:<version>-slim`
 
-### Use Node
+### Usage
 
 You can use the image directly, e.g.
 
