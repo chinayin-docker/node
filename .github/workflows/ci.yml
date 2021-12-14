@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         major: [ 12,14,16 ]
-        os: [ buster-slim ]
+        os: [ bullseye-slim ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -37,10 +37,12 @@ jobs:
           context: ${{ steps.vars.outputs.workdir }}
           pull: true
           push: true
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           tags: |
             ${{ steps.vars.outputs.repository }}:${{ matrix.major }}
             ${{ steps.vars.outputs.repository }}:${{ steps.vars.outputs.version }}
+            ${{ steps.vars.outputs.repository }}:${{ matrix.major }}-${{ matrix.os }}
+            ${{ steps.vars.outputs.repository }}:${{ steps.vars.outputs.version }}-${{ matrix.os }}
   build-slim:
     runs-on: ubuntu-latest
     needs: build
@@ -73,7 +75,7 @@ jobs:
           context: ${{ steps.vars.outputs.workdir }}
           pull: true
           push: true
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           tags: |
             ${{ steps.vars.outputs.repository }}:${{ matrix.major }}-${{ matrix.os }}
             ${{ steps.vars.outputs.repository }}:${{ steps.vars.outputs.version }}-${{ matrix.os }}
@@ -109,7 +111,7 @@ jobs:
           context: ${{ steps.vars.outputs.workdir }}
           pull: true
           push: true
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           tags: |
             ${{ steps.vars.outputs.repository }}:${{ matrix.major }}-${{ matrix.os }}
             ${{ steps.vars.outputs.repository }}:${{ steps.vars.outputs.version }}-${{ matrix.os }}
