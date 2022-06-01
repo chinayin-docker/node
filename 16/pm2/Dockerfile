@@ -5,7 +5,8 @@
 #--------------------------------------------------------------------------
 #
 
-FROM chinayin/node:16-slim
+ARG NODE_VERSION=16.15.0
+FROM chinayin/node:${NODE_VERSION}-slim
 LABEL maintainer="chinayin <whereismoney@qq.com>"
 
 USER root
