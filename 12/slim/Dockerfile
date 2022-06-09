@@ -18,6 +18,7 @@ RUN if [ $CHANGE_SOURCE = true ]; then \
 RUN set -eux; \
     \
     mkdir /app; \
+    chown node:node /app; \
     \
     node --version
 
