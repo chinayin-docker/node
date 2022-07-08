@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        major: [ 12,14,16 ]
+        major: [ 14,16,18 ]
         os: [ bullseye-slim ]
     steps:
       - name: Checkout code
@@ -48,7 +48,7 @@ jobs:
     needs: build
     strategy:
       matrix:
-        major: [ 12,14,16 ]
+        major: [ 14,16,18 ]
         os: [ slim ]
     steps:
       - name: Checkout code
@@ -84,7 +84,7 @@ jobs:
     needs: build-slim
     strategy:
       matrix:
-        major: [ 12,14,16 ]
+        major: [ 14,16,18 ]
         os: [ pm2 ]
     steps:
       - name: Checkout code

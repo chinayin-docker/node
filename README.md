@@ -9,13 +9,13 @@ Node.js is a JavaScript-based platform for server-side and networking applicatio
 
 ### Supported tags and respective `Dockerfile` links
 
-![](https://img.shields.io/docker/v/chinayin/node/12)
 ![](https://img.shields.io/docker/v/chinayin/node/14)
 ![](https://img.shields.io/docker/v/chinayin/node/16)
+![](https://img.shields.io/docker/v/chinayin/node/18)
 
-![](https://img.shields.io/docker/v/chinayin/node/12-slim)
 ![](https://img.shields.io/docker/v/chinayin/node/14-slim)
 ![](https://img.shields.io/docker/v/chinayin/node/16-slim)
+![](https://img.shields.io/docker/v/chinayin/node/18-slim)
 
 ### Image Variants
 
