@@ -58,7 +58,7 @@ jobs:
         working-directory: ${{ matrix.major }}/${{ matrix.os }}
         run: |
           echo "repository=${GITHUB_ACTOR}/$(basename ${GITHUB_REPOSITORY})" >> $GITHUB_OUTPUT
-          echo "version=$(grep ' NODE_VERSION ' Dockerfile | awk '{print $3}')" >> $GITHUB_OUTPUT
+          echo "version=$(grep 'NODE_VERSION=' Dockerfile | awk -F '[=.]' '{print $2"."$3"."$4}')" >> $GITHUB_OUTPUT
           echo "workdir=${{ matrix.major }}/${{ matrix.os }}" >> $GITHUB_OUTPUT
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -94,7 +94,7 @@ jobs:
         working-directory: ${{ matrix.major }}/${{ matrix.os }}
         run: |
           echo "repository=${GITHUB_ACTOR}/$(basename ${GITHUB_REPOSITORY})" >> $GITHUB_OUTPUT
-          echo "version=$(grep ' NODE_VERSION ' Dockerfile | awk '{print $3}')" >> $GITHUB_OUTPUT
+          echo "version=$(grep 'NODE_VERSION=' Dockerfile | awk -F '[=.]' '{print $2"."$3"."$4}')" >> $GITHUB_OUTPUT
           echo "workdir=${{ matrix.major }}/${{ matrix.os }}" >> $GITHUB_OUTPUT
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
