@@ -19,9 +19,9 @@ jobs:
         id: vars
         working-directory: ${{ matrix.major }}/${{ matrix.os }}
         run: |
-          echo ::set-output name=repository::${GITHUB_ACTOR}/$(basename ${GITHUB_REPOSITORY})
-          echo ::set-output name=version::$(grep ' NODE_VERSION ' Dockerfile | awk '{print $3}')
-          echo ::set-output name=workdir::${{ matrix.major }}/${{ matrix.os }}
+          echo "repository=${GITHUB_ACTOR}/$(basename ${GITHUB_REPOSITORY})" >> $GITHUB_OUTPUT
+          echo "version=$(grep ' NODE_VERSION ' Dockerfile | awk '{print $3}')" >> $GITHUB_OUTPUT
+          echo "workdir=${{ matrix.major }}/${{ matrix.os }}" >> $GITHUB_OUTPUT
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -57,9 +57,9 @@ jobs:
         id: vars
         working-directory: ${{ matrix.major }}/${{ matrix.os }}
         run: |
-          echo ::set-output name=repository::${GITHUB_ACTOR}/$(basename ${GITHUB_REPOSITORY})
-          echo ::set-output name=version::$(grep 'NODE_VERSION=' Dockerfile | awk -F '[=.]' '{print $2"."$3"."$4}')
-          echo ::set-output name=workdir::${{ matrix.major }}/${{ matrix.os }}
+          echo "repository=${GITHUB_ACTOR}/$(basename ${GITHUB_REPOSITORY})" >> $GITHUB_OUTPUT
+          echo "version=$(grep ' NODE_VERSION ' Dockerfile | awk '{print $3}')" >> $GITHUB_OUTPUT
+          echo "workdir=${{ matrix.major }}/${{ matrix.os }}" >> $GITHUB_OUTPUT
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -93,9 +93,9 @@ jobs:
         id: vars
         working-directory: ${{ matrix.major }}/${{ matrix.os }}
         run: |
-          echo ::set-output name=repository::${GITHUB_ACTOR}/$(basename ${GITHUB_REPOSITORY})
-          echo ::set-output name=version::$(grep 'NODE_VERSION=' Dockerfile | awk -F '[=.]' '{print $2"."$3"."$4}')
-          echo ::set-output name=workdir::${{ matrix.major }}/${{ matrix.os }}
+          echo "repository=${GITHUB_ACTOR}/$(basename ${GITHUB_REPOSITORY})" >> $GITHUB_OUTPUT
+          echo "version=$(grep ' NODE_VERSION ' Dockerfile | awk '{print $3}')" >> $GITHUB_OUTPUT
+          echo "workdir=${{ matrix.major }}/${{ matrix.os }}" >> $GITHUB_OUTPUT
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx

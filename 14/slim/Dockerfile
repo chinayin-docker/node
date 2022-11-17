@@ -5,7 +5,7 @@
 #--------------------------------------------------------------------------
 #
 
-ARG NODE_VERSION=14.20.0
+ARG NODE_VERSION=14.21.1
 FROM chinayin/node:${NODE_VERSION}
 LABEL maintainer="chinayin <whereismoney@qq.com>"
 
