@@ -1,6 +1,6 @@
 # nodejs
 
-[![Docker Image CI](https://github.com/chinayin-docker/node/actions/workflows/ci.yml/badge.svg?event=schedule)](https://github.com/chinayin-docker/php/actions/workflows/ci.yml)
+[![Docker Image CI](https://github.com/chinayin-docker/node/actions/workflows/ci.yml/badge.svg?event=schedule)](https://github.com/chinayin-docker/node/actions/workflows/ci.yml)
 ![Docker Image Version (latest semver)](https://img.shields.io/docker/v/chinayin/node?sort=semver)
 ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/chinayin/node?sort=semver)
 ![Docker Pulls](https://img.shields.io/docker/pulls/chinayin/node)
