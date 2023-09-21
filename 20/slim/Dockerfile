@@ -1,11 +1,11 @@
 #
 #
 #--------------------------------------------------------------------------
-# node 16-slim
+# node 20-slim
 #--------------------------------------------------------------------------
 #
 
-ARG NODE_VERSION=16.20.2
+ARG NODE_VERSION=20.7.0
 FROM chinayin/node:${NODE_VERSION}
 LABEL maintainer="chinayin <whereismoney@qq.com>"
 
