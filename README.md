@@ -27,7 +27,7 @@ Node.js is a JavaScript-based platform for server-side and networking applicatio
 You can use the image directly, e.g.
 
 ```
-docker run --rm -it chinayin/node:16
+docker run --rm -it chinayin/node:20
 ```
 
 The images are built daily and have the security release enabled, so will contain any security updates released more
@@ -36,7 +36,7 @@ than 24 hours ago.
 You can also use the images as a base for your own Dockerfile:
 
 ```
-FROM chinayin/node:16
+FROM chinayin/node:20
 ```
 
 [ref](https://github.com/nodejs/docker-node)

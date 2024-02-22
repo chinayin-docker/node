@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        major: [ 16,18,20 ]
+        major: [ 18,20 ]
         os: [ bookworm-slim ]
     steps:
       - name: Checkout code
@@ -48,7 +48,7 @@ jobs:
     needs: build
     strategy:
       matrix:
-        major: [ 16,18,20 ]
+        major: [ 18,20 ]
         os: [ slim ]
     steps:
       - name: Checkout code
@@ -84,7 +84,7 @@ jobs:
     needs: build-slim
     strategy:
       matrix:
-        major: [ 16,18,20 ]
+        major: [ 18,20 ]
         os: [ pm2 ]
     steps:
       - name: Checkout code
