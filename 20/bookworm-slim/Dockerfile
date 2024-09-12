@@ -10,7 +10,7 @@ FROM chinayin/debian:bookworm-slim
 RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
-ENV NODE_VERSION 20.13.1
+ENV NODE_VERSION 20.17.0
 
 RUN ARCH= OPENSSL_ARCH= && dpkgArch="$(dpkg --print-architecture)" \
     && case "${dpkgArch##*-}" in \
@@ -70,7 +70,7 @@ RUN ARCH= OPENSSL_ARCH= && dpkgArch="$(dpkg --print-architecture)" \
     && node --version \
     && npm --version
 
-ENV YARN_VERSION 1.22.19
+ENV YARN_VERSION 1.22.22
 
 RUN set -ex \
   && savedAptMark="$(apt-mark showmanual)" \
