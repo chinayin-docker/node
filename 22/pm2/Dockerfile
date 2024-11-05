@@ -1,18 +1,21 @@
 #
 #
 #--------------------------------------------------------------------------
-# node 20-python
+# node 22-pm2
 #--------------------------------------------------------------------------
 #
 
-ARG NODE_VERSION=20.18.0
+ARG NODE_VERSION=22.11.0
 FROM chinayin/node:${NODE_VERSION}-slim
 LABEL maintainer="chinayin <whereismoney@qq.com>"
 
 USER root
 RUN set -eux; \
-    # Install python
-    install_packages python3 make g++; \
-    ln -s /usr/bin/python3 /usr/bin/python; \
+    # Install pm2
+    npm install pm2 -g; \
     \
-    python -V
+    pm2 -version
+
+USER node
+EXPOSE 3000 43554
+CMD ["pm2-runtime", "start", "pm2.json"]
