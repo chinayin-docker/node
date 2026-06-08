@@ -1,11 +1,11 @@
 #
 #
 #--------------------------------------------------------------------------
-# node 14-slim
+# node 24-slim
 #--------------------------------------------------------------------------
 #
 
-ARG NODE_VERSION=14.21.3
+ARG NODE_VERSION=24.16.0
 FROM chinayin/node:${NODE_VERSION}
 LABEL maintainer="chinayin <whereismoney@qq.com>"
 
@@ -17,7 +17,7 @@ RUN if [ $CHANGE_SOURCE = true ]; then \
 
 RUN set -eux; \
     \
-    mkdir /app; \
+    mkdir -p /app; \
     chown node:node /app; \
     \
     node --version

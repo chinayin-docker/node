@@ -1,11 +1,11 @@
 #
 #
 #--------------------------------------------------------------------------
-# node 14-python
+# node 24-python
 #--------------------------------------------------------------------------
 #
 
-ARG NODE_VERSION=14.21.3
+ARG NODE_VERSION=24.16.0
 FROM chinayin/node:${NODE_VERSION}-slim
 LABEL maintainer="chinayin <whereismoney@qq.com>"
 
